@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/akira/devel/OpenIMU/OpenIMUdriver/build",
+  "command": "/usr/bin/c++ -D__DEBUG__ -I/home/akira/devel/OpenIMU/OpenIMUdriver/include -std=c++17 -pthread -g -o CMakeFiles/openIMUdriver.dir/src/cksum.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/cksum.cpp",
+  "file": "/home/akira/devel/OpenIMU/OpenIMUdriver/src/cksum.cpp"
+},
+{
+  "directory": "/home/akira/devel/OpenIMU/OpenIMUdriver/build",
+  "command": "/usr/bin/c++ -D__DEBUG__ -I/home/akira/devel/OpenIMU/OpenIMUdriver/include -std=c++17 -pthread -g -o CMakeFiles/openIMUdriver.dir/src/main.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/main.cpp",
+  "file": "/home/akira/devel/OpenIMU/OpenIMUdriver/src/main.cpp"
+},
+{
+  "directory": "/home/akira/devel/OpenIMU/OpenIMUdriver/build",
+  "command": "/usr/bin/c++ -D__DEBUG__ -I/home/akira/devel/OpenIMU/OpenIMUdriver/include -std=c++17 -pthread -g -o CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUdriver.cpp",
+  "file": "/home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUdriver.cpp"
+},
+{
+  "directory": "/home/akira/devel/OpenIMU/OpenIMUdriver/build",
+  "command": "/usr/bin/c++ -D__DEBUG__ -I/home/akira/devel/OpenIMU/OpenIMUdriver/include -std=c++17 -pthread -g -o CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUparser.cpp",
+  "file": "/home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUparser.cpp"
+},
+{
+  "directory": "/home/akira/devel/OpenIMU/OpenIMUdriver/build",
+  "command": "/usr/bin/c++ -D__DEBUG__ -I/home/akira/devel/OpenIMU/OpenIMUdriver/include -std=c++17 -pthread -g -o CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/serialCom.cpp",
+  "file": "/home/akira/devel/OpenIMU/OpenIMUdriver/src/serialCom.cpp"
+}
+]
