@@ -97,10 +97,24 @@ CMakeFiles/openIMUdriver.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openIMUdriver.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/akira/devel/OpenIMU/OpenIMUdriver/src/main.cpp -o CMakeFiles/openIMUdriver.dir/src/main.cpp.s
 
+CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o: CMakeFiles/openIMUdriver.dir/flags.make
+CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o: ../src/openIMUdata.cpp
+CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o: CMakeFiles/openIMUdriver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o -MF CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o.d -o CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUdata.cpp
+
+CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUdata.cpp > CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.i
+
+CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUdata.cpp -o CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.s
+
 CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o: CMakeFiles/openIMUdriver.dir/flags.make
 CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o: ../src/openIMUdriver.cpp
 CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o: CMakeFiles/openIMUdriver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o -MF CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o.d -o CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUdriver.cpp
 
 CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.s: cmake_force
 CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o: CMakeFiles/openIMUdriver.dir/flags.make
 CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o: ../src/openIMUparser.cpp
 CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o: CMakeFiles/openIMUdriver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o -MF CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o.d -o CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/openIMUparser.cpp
 
 CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.s: cmake_force
 CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o: CMakeFiles/openIMUdriver.dir/flags.make
 CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o: ../src/serialCom.cpp
 CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o: CMakeFiles/openIMUdriver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o -MF CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o.d -o CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o -c /home/akira/devel/OpenIMU/OpenIMUdriver/src/serialCom.cpp
 
 CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.i: cmake_force
@@ -143,6 +157,7 @@ CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.s: cmake_force
 openIMUdriver_OBJECTS = \
 "CMakeFiles/openIMUdriver.dir/src/cksum.cpp.o" \
 "CMakeFiles/openIMUdriver.dir/src/main.cpp.o" \
+"CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o" \
 "CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o" \
 "CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o" \
 "CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o"
@@ -152,12 +167,13 @@ openIMUdriver_EXTERNAL_OBJECTS =
 
 openIMUdriver: CMakeFiles/openIMUdriver.dir/src/cksum.cpp.o
 openIMUdriver: CMakeFiles/openIMUdriver.dir/src/main.cpp.o
+openIMUdriver: CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o
 openIMUdriver: CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o
 openIMUdriver: CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o
 openIMUdriver: CMakeFiles/openIMUdriver.dir/src/serialCom.cpp.o
 openIMUdriver: CMakeFiles/openIMUdriver.dir/build.make
 openIMUdriver: CMakeFiles/openIMUdriver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable openIMUdriver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable openIMUdriver"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/openIMUdriver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

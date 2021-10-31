@@ -79,8 +79,6 @@ void OpenIMUdriver::ListeningCom(){
 
 void OpenIMUdriver::ListeningCom(){
 	
-	
-	
 	while (this->_isListening)
 	{
 		std::string data;
@@ -111,7 +109,6 @@ void OpenIMUdriver::Process_rx(){
 
 	while (this->_isProcessing)
 	{
-		data.clear();
 		{
 			// Wait for a message to be added to the queue
 			std::unique_lock<std::mutex> lk(this->_rx_mutex);
@@ -122,7 +119,7 @@ void OpenIMUdriver::Process_rx(){
 				continue;
 
 			while (!_rx_queue.empty()){
-				data.append(this->_rx_queue.front());
+				data = std::string(this->_rx_queue.front()); // copy the front element
 				this->_rx_queue.pop();
 			}
 		}

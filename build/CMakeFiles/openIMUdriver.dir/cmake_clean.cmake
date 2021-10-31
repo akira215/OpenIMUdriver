@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/openIMUdriver.dir/src/cksum.cpp.o.d"
   "CMakeFiles/openIMUdriver.dir/src/main.cpp.o"
   "CMakeFiles/openIMUdriver.dir/src/main.cpp.o.d"
+  "CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o"
+  "CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o.d"
   "CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o"
   "CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o.d"
   "CMakeFiles/openIMUdriver.dir/src/openIMUparser.cpp.o"

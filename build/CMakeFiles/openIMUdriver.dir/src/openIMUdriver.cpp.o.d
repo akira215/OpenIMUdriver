@@ -119,6 +119,7 @@ CMakeFiles/openIMUdriver.dir/src/openIMUdriver.cpp.o: \
  /usr/include/bits/unistd_ext.h /usr/include/poll.h \
  /usr/include/sys/poll.h /usr/include/bits/poll.h \
  /home/akira/devel/OpenIMU/OpenIMUdriver/include/openIMUparser.h \
+ /home/akira/devel/OpenIMU/OpenIMUdriver/include/openIMUdata.h \
  /usr/include/c++/11/queue /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \

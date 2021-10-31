@@ -197,6 +197,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/openIMUdriver.dir/build.make CMakeFiles/openIMUdriver.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/openIMUdata.o: src/openIMUdata.cpp.o
+.PHONY : src/openIMUdata.o
+
+# target to build an object file
+src/openIMUdata.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/openIMUdriver.dir/build.make CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.o
+.PHONY : src/openIMUdata.cpp.o
+
+src/openIMUdata.i: src/openIMUdata.cpp.i
+.PHONY : src/openIMUdata.i
+
+# target to preprocess a source file
+src/openIMUdata.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/openIMUdriver.dir/build.make CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.i
+.PHONY : src/openIMUdata.cpp.i
+
+src/openIMUdata.s: src/openIMUdata.cpp.s
+.PHONY : src/openIMUdata.s
+
+# target to generate assembly for a file
+src/openIMUdata.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/openIMUdriver.dir/build.make CMakeFiles/openIMUdriver.dir/src/openIMUdata.cpp.s
+.PHONY : src/openIMUdata.cpp.s
+
 src/openIMUdriver.o: src/openIMUdriver.cpp.o
 .PHONY : src/openIMUdriver.o
 
@@ -286,6 +310,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/openIMUdata.o"
+	@echo "... src/openIMUdata.i"
+	@echo "... src/openIMUdata.s"
 	@echo "... src/openIMUdriver.o"
 	@echo "... src/openIMUdriver.i"
 	@echo "... src/openIMUdriver.s"
