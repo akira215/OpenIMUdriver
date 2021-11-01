@@ -4,7 +4,7 @@
 #include <cstring> 	//memcpy
 
 OpenIMUparser::OpenIMUparser():
-	_header_found(false),_sync_pattern(std::string()), 
+	_datas (nullptr), _packetType(std::string()), _header_found(false),_sync_pattern(std::string()), 
 	_packet_code(std::string()),_frame(std::string()),_payload_length(0),_crc_s(std::string()),_crc(false)
 {
 	_datas = new OpenIMUdata();
@@ -13,17 +13,22 @@ OpenIMUparser::OpenIMUparser():
 
 
 OpenIMUparser::~OpenIMUparser(){
-
+	delete _datas;
+	_datas= nullptr;
 }
 
 void OpenIMUparser::newData(std::string& data){
-	//std::cout << "newdata :"<< data << std::endl;
+	std::cout << "newdata :"<< data << std::endl;
 	for(char& c : data){
 		//std::cout << "f: "<< c;
 		if(_header_found){
 			if(_packet_code.length()<2)
 				_packet_code.push_back(c);
-			else{
+			else{/*
+				if(_packetType != _packet_code){
+					_packetType = std::string(_packet_code);
+					_datas->setPacketType(_packetType);
+				}*/
 				if(_payload_length == 0)
 					_payload_length = (uint8_t)c;
 				else{
@@ -45,16 +50,20 @@ void OpenIMUparser::newData(std::string& data){
 							
 							uint16_t crc= crc16(reinterpret_cast<unsigned char*>(const_cast<char*>(packet.c_str())), packet.length());
 							//compute CRC
-							if (crc==val)
+							if (crc==val) {
 								_crc=true;
+								_datas->newData(_frame);
+							} else {
+								_datas->error("Checksum error ");
+							}
 							
-							//_datas->newData(_frame);
-
 							std::cout << "packet code :"<< _packet_code << " payload: " << (unsigned int) _payload_length
 								<< " message :" << _frame
 								<< " crc :" << (unsigned int) val
 								<< " computed crc :" << (unsigned int) crc
 								<< " checked :" << _crc << std::endl;
+
+							
 							resetState();
 						}
 

@@ -12,9 +12,10 @@ public :
 	~OpenIMUparser();
 	void newData(std::string& data);
 private :
-	void resetState();
-	
+	void resetState();	
 	OpenIMUdata* _datas;
+
+	std::string _packetType;
 	bool _header_found;
 	std::string _sync_pattern;
 	std::string _frame;

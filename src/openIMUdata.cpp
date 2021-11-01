@@ -1,6 +1,10 @@
 #include "openIMUdata.h"
+#include <json.hpp>
+#include <fstream>	// std::ifstream
 #include <iostream>
 #include <cstring> 	//memcpy
+
+using json = nlohmann::json;
 
 OpenIMUdata::OpenIMUdata() {
 
@@ -10,13 +14,39 @@ OpenIMUdata::~OpenIMUdata() {
 	
 }
 
+void OpenIMUdata::setPacketType(std::string& packetType){
+	// read a JSON file
+	std::ifstream i("../openimu.json");
+	json j;
+	i >> j;
+	std::cout << "json" << j <<std::endl;
+}
+
 void OpenIMUdata::newData(std::string& data){
+	auto it = data.begin();
 
-	std::memcpy(&timeITOW, data.c_str(), sizeof(timeITOW));
-	std::cout  << "timeITOW: " << timeITOW << "ms" << std::endl;
-//<< "\r"
+	std::memcpy(&timeITOW, &(*it), sizeof(timeITOW));
+	std::cout  << "timeITOW: " << timeITOW << "ms";
+	std::advance(it,sizeof(timeITOW));
+
+	std::memcpy(&time, &(*it), sizeof(time));
+	std::cout  << " - time: " << time << "s";
+	std::advance(it,sizeof(time));
+
+	std::memcpy(&roll, &(*it), sizeof(roll));
+	std::cout  << " - roll: " << roll << "rad";
+	std::advance(it,sizeof(roll));
+
+	std::memcpy(&pitch, &(*it), sizeof(pitch));
+	std::cout  << " - roll: " << roll << "rad";
+	std::advance(it,sizeof(pitch));
+	
+	std::cout << "\r";
 
 
+}
+void OpenIMUdata::error(const std::string& msg){
+	std::cout << msg <<std::endl;
 }
 /*
 "type": "uint32",
