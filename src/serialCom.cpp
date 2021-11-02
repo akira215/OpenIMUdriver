@@ -18,20 +18,26 @@ SerialCom::SerialCom( const std::string& device):
 		_ufds.fd = _device_fd;		//Attach socket to watch.
 		_ufds.events = POLLIN;	//Set events to notify on.
 	}
-/*
+
 	struct termios tty ;
-	if(isInitialized){
+	if(_isInitialized){
 		// get the configuration of the serial port
-		if(tcgetattr(_serial_port, &tty) != 0) {
+		if(tcgetattr(_device_fd, &tty) != 0) {
 			std::cout << "Error " <<  errno <<" from tcgetattr: "<< std::strerror(errno) << std::endl;
+		} else {
+			// Turn off any options that might interfere with our ability to send and
+			// receive raw binary bytes.
+			tty.c_iflag &= ~(INLCR | IGNCR | ICRNL | IXON | IXOFF);
+			tty.c_oflag &= ~(ONLCR | OCRNL);
+			tty.c_lflag &= ~(ECHO | ECHONL | ICANON | ISIG | IEXTEN);
 		}
+
 	}
 
-	if (tcsetattr(_serial_port, TCSANOW, &tty) != 0)
+	if (tcsetattr(_device_fd, TCSANOW, &tty) != 0)
 		std::cout << "Error " <<  errno <<" from tcsetattr: "<< std::strerror(errno) << std::endl;
 
 
-	*/
 }
 
 SerialCom::~SerialCom() {

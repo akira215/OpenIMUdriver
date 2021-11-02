@@ -18,7 +18,7 @@ OpenIMUparser::~OpenIMUparser(){
 }
 
 void OpenIMUparser::newData(std::string& data){
-	std::cout << "newdata :"<< data << std::endl;
+	//std::cout << "newdata :"<< data << std::endl;
 	for(char& c : data){
 		//std::cout << "f: "<< c;
 		if(_header_found){
@@ -56,13 +56,13 @@ void OpenIMUparser::newData(std::string& data){
 							} else {
 								_datas->error("Checksum error ");
 							}
-							
+							/*
 							std::cout << "packet code :"<< _packet_code << " payload: " << (unsigned int) _payload_length
 								<< " message :" << _frame
 								<< " crc :" << (unsigned int) val
 								<< " computed crc :" << (unsigned int) crc
 								<< " checked :" << _crc << std::endl;
-
+							*/
 							
 							resetState();
 						}

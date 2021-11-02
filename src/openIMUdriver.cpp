@@ -83,19 +83,19 @@ void OpenIMUdriver::ListeningCom(){
 	{
 		std::string data;
 
-		//data = _communicator->pollRx();
-		data.assign(_communicator->pollRx());
+		data = _communicator->pollRx();
+		//data.assign(_communicator->pollRx());
 
 
 		if(!data.empty()) {
 			std::unique_lock<std::mutex> lk(this->_rx_mutex);
-			
+			/*
 			std::cout << "len: " << data.length()<< " data: ";
 			for(char& c : data) {
 				std::cout << std::hex<<static_cast<int>(c) << " ";
 			}
 			std::cout << " End "<< std::endl;;
-			
+			*/
 			this->_rx_queue.push(data);
 			this->_rx_cv.notify_one();
 		}
@@ -120,15 +120,16 @@ void OpenIMUdriver::Process_rx(){
 				continue;
 
 			while (!_rx_queue.empty()){
-				std::cout << "queue" <<_rx_queue.front()<<std::endl;
-				data = std::string(this->_rx_queue.front()); // copy the front element
+				//std::cout << "queue" <<_rx_queue.front()<<std::endl;
+				data.append(this->_rx_queue.front()); // copy the front element
 				//data.assign(this->_rx_queue.front()); // copy the front element
 				this->_rx_queue.pop();
-				this->_parser->newData(data);
+				//this->_parser->newData(data);
 			}
 		}
 
-		//this->_parser->newData(data);
+		this->_parser->newData(data);
+		data.clear();
 
 	}
 
