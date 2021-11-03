@@ -60,6 +60,9 @@
             "bitset": "cpp",
             "map": "cpp",
             "regex": "cpp",
-            "variant": "cpp"
+            "variant": "cpp",
+            "forward_list": "cpp",
+            "fstream": "cpp",
+            "valarray": "cpp"
       }
 }

@@ -1,5 +1,0 @@
-/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles/edit_cache.dir
-/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles/package_source.dir
-/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles/rebuild_cache.dir
-/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles/package.dir
-/home/akira/devel/OpenIMU/OpenIMUdriver/build/CMakeFiles/openIMUdriver.dir

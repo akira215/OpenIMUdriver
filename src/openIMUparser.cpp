@@ -24,11 +24,8 @@ void OpenIMUparser::newData(std::string& data){
 		if(_header_found){
 			if(_packet_code.length()<2)
 				_packet_code.push_back(c);
-			else{/*
-				if(_packetType != _packet_code){
-					_packetType = std::string(_packet_code);
-					_datas->setPacketType(_packetType);
-				}*/
+			else{
+				
 				if(_payload_length == 0)
 					_payload_length = (uint8_t)c;
 				else{
@@ -52,6 +49,11 @@ void OpenIMUparser::newData(std::string& data){
 							//compute CRC
 							if (crc==val) {
 								_crc=true;
+								if(_packetType != _packet_code){
+									// If packtype changed, update struct.
+									_packetType = std::string(_packet_code);
+									_datas->setPacketType(_packetType);
+								}
 								_datas->newData(_frame);
 							} else {
 								_datas->error("Checksum error ");

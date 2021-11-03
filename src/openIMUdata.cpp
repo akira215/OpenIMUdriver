@@ -11,15 +11,41 @@ OpenIMUdata::OpenIMUdata() {
 }
 
 OpenIMUdata::~OpenIMUdata() {
-	
+	clearData();	
+}
+
+void OpenIMUdata::clearData(){
+	// delete old objects
+	for (IMUData* el : _data_vector) {
+		delete el;
+		el=nullptr;
+	}
+	_data_vector.clear();
 }
 
 void OpenIMUdata::setPacketType(std::string& packetType){
 	// read a JSON file
-	std::ifstream i("../openimu.json");
+	std::ifstream i(CONFIG_FILE);
 	json j;
 	i >> j;
-	std::cout << "json" << j <<std::endl;
+
+	for(const auto& packetDesc : j[USER_MESSAGES][OUTPUT_PACKETS] ){
+		if(packetDesc["name"]==packetType){
+			
+			// delete old objects
+			clearData();
+
+			// create new data vector
+			for(const auto& payloadDesc : packetDesc["payload"] ){
+				IMUData* newItem = new IMUData();
+				newItem->name = payloadDesc["name"];
+				newItem->unit = payloadDesc["unit"];
+				newItem->setType(payloadDesc["type"]);
+				//std::cout << payloadDesc <<std::endl;
+			}
+		}
+	}
+	//std::cout << "json" << j[USER_MESSAGES][OUTPUT_PACKETS] <<std::endl;
 }
 
 void OpenIMUdata::newData(std::string& data){
@@ -38,10 +64,11 @@ void OpenIMUdata::newData(std::string& data){
 	std::advance(it,sizeof(roll));
 
 	std::memcpy(&pitch, &(*it), sizeof(pitch));
-	std::cout  << " - roll: " << roll << "rad";
+	std::cout  << " - pitch: " << pitch << "rad";
 	std::advance(it,sizeof(pitch));
 	
 	std::cout << "\r";
+	
 
 
 }

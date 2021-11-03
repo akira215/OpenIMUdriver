@@ -4,26 +4,41 @@
 //#include "serialCom.h"
 #include "openIMUdriver.h"
 
+#include <stdio.h>
+#include <unistd.h>
+#include <termios.h>
+
 #include <chrono>
 #include <thread>
 
 
 int main() {
-	//SerialCom* com = new SerialCom("/dev/ttyUSB0");
-	
-	//com->setBaudrate(115200);
-	/*
-	for (int i=1;i<100;++i)
-		com->readData();
-		*/
-	//com->startThread();
-	OpenIMUdriver* driver = new OpenIMUdriver();
-	std::cout << "Hello, World! " <<std::endl;
-	std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
-	//com->stopThread();
+	OpenIMUdriver* driver = new OpenIMUdriver();
+	std::cout << "Starting OpenIMU test ................ " <<std::endl;
+
+	
+	std::cout << "Press ESC to exit." <<std::endl;
+	
+	// Get stdin read without pressing enter
+	struct termios old_tio, new_tio;
+	tcgetattr(STDIN_FILENO, &old_tio);
+	new_tio = old_tio;
+	new_tio.c_lflag &= (~ICANON & ~ECHO);
+	tcsetattr(STDIN_FILENO,TCSANOW,&new_tio);
+	
+	int userInput;
+	while(true){ //Loop until Esc
+		userInput = getchar();
+		if (userInput == 27)
+			break;
+	}
+
+	tcsetattr(STDIN_FILENO,TCSANOW,&old_tio); // restore console settings
+	//std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+
 
 	delete driver;
-	//delete com;
+
 	return 0;
 }
