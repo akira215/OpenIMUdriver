@@ -21,6 +21,7 @@ void OpenIMUdata::clearData(){
 		el=nullptr;
 	}
 	_data_vector.clear();
+	_data_map.clear();
 }
 
 void OpenIMUdata::setPacketType(std::string& packetType){
@@ -37,11 +38,18 @@ void OpenIMUdata::setPacketType(std::string& packetType){
 
 			// create new data vector
 			for(const auto& payloadDesc : packetDesc["payload"] ){
+				std::cout << payloadDesc <<std::endl;
 				IMUData* newItem = new IMUData();
 				newItem->name = payloadDesc["name"];
 				newItem->unit = payloadDesc["unit"];
 				newItem->setType(payloadDesc["type"]);
-				//std::cout << payloadDesc <<std::endl;
+				//newItem->setSize(payloadDesc["type"]);
+				std::cout << newItem->name << " type: " << newItem->type
+						<< " size: "<< newItem->size <<std::endl;
+				// Store in 2 containers
+				_data_vector.push_back(newItem);
+				_data_map[newItem->name] = newItem;
+				
 			}
 		}
 	}
@@ -49,8 +57,23 @@ void OpenIMUdata::setPacketType(std::string& packetType){
 }
 
 void OpenIMUdata::newData(std::string& data){
-	auto it = data.begin();
+	//auto it = data.begin();
+	const char* str = data.c_str();
 
+	for (IMUData* el : _data_vector) {
+
+		//std::memcpy(value, &(*it), el->size);
+		//el->setValue(&(*it));
+		//std::advance(it, el->size);
+		el->setValue(str);
+		str += el->size;
+		
+		std::cout  << el->name << ": ";
+		std::visit([](const auto &x) { std::cout << x; }, el->value);
+		std::cout << " " << el->unit << std::endl;
+		
+	}
+/*
 	std::memcpy(&timeITOW, &(*it), sizeof(timeITOW));
 	std::cout  << "timeITOW: " << timeITOW << "ms";
 	std::advance(it,sizeof(timeITOW));
@@ -68,7 +91,7 @@ void OpenIMUdata::newData(std::string& data){
 	std::advance(it,sizeof(pitch));
 	
 	std::cout << "\r";
-	
+	*/
 
 
 }

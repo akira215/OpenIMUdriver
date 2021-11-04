@@ -1,7 +1,7 @@
 #pragma once
 
 #include "openIMUdataTypes.h"
-//#include <variant>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -30,7 +30,8 @@ public :
 	void error(const std::string& msg);
 private :
 	void clearData();
-	std::vector<IMUData*> _data_vector;
+	std::vector<IMUData*> _data_vector;			// each data pointer is stored twice
+	std::map<std::string, IMUData*> _data_map; // key :name of data / value 
 
 	uint32_t timeITOW; //msec
 	double time; // s
